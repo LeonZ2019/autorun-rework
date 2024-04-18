@@ -16,6 +16,10 @@
 */
 
 params ["_display"];
+if (count (actionKeys "LEON_Autorun_stopKey") > 0) then {
+	private _key = actionKeysNamesArray "LEON_Autorun_stopKey";
+	(_display displayCtrl -1) ctrlSetText format ["PRESS %1 KEY TO STOP", toUpper (_key select 0)];
+};
 [_display displayCtrl 80425] spawn {
 	params ["_ctrl"];
 	private _id = 1;

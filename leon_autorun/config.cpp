@@ -20,6 +20,7 @@ class CfgFunctions
 			class addEHKeybind {
 				preInit = 1;
 			};
+			class checkDisplay {};
 			class getAnimation {};
 			class getStance {};
 			class onKeyDown {};
@@ -41,6 +42,24 @@ class CfgUserActions
 		onAnalog = "";
 		analogChangeThreshold = 0.1;
 	};
+	class LEON_Autorun_disabledKey
+	{
+		displayName = "Disabled Key";
+		tooltip = "Key ignore by Autorun.";
+		onActivate = "";
+		onDeactivate = "";
+		onAnalog = "";
+		analogChangeThreshold = 0.1;
+	};
+	class LEON_Autorun_stopKey
+	{
+		displayName = "Stop Key";
+		tooltip = "Stop the run if it is activated.";
+		onActivate = "";
+		onDeactivate = "";
+		onAnalog = "";
+		analogChangeThreshold = 0.1;
+	};
 };
 class CfgDefaultKeysPresets
 {
@@ -51,6 +70,16 @@ class CfgDefaultKeysPresets
 			LEON_Autorun_Key[] = {
 				0x3F
 			};
+			LEON_Autorun_disabledKey[] = {
+				0x18, // watch
+				"256 + 0x18", // watch (toggle)
+				0x25, // compass
+				"256 + 0x25", // compass (toggle)
+				0x32, // map
+				0x31 // night vision
+
+			};
+			LEON_Autorun_stopKey[] = {};
 		};
 	};
 };
@@ -60,7 +89,7 @@ class UserActionGroups
 	{
 		name = "Autorun Rework";
 		isAddon = 1;
-		group[] = {"Leon_Autorun_Key"};
+		group[] = {"Leon_Autorun_Key", "LEON_Autorun_disabledKey", "LEON_Autorun_stopKey"};
 	};
 };
 class RscTitles

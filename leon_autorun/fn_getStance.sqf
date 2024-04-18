@@ -17,7 +17,7 @@
 		call LEON_Autorun_fnc_getAnimation;
 */
 
-private ["_asl", "_currentStance", "_isCrouch", "_isProne", "_stance"];
+private ["_asl", "_isSit", "_currentStance", "_isCrouch", "_isProne", "_stance"];
 
 _currentStance = stance player;
 _isSit = animationState player select [0, 8] == "aadjppne";

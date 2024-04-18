@@ -9,7 +9,7 @@
 		None
 
 	Returns:
-		Boolean, true if stance is same
+		BOOLEAN, TRUE if stance is same
 	
 	Example:
 		call LEON_Autorun_fnc_updateStance;

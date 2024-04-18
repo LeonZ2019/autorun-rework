@@ -15,8 +15,11 @@ This is rework from Autorun by A. Cyprus in Armaholic, rework has been fixed cou
  - Freelook `alt`
  - Toggle View `Enter [NUM]`
 
+### Bypass display/interface?
+[How To Bypass custom display](https://github.com/LeonZ2019/autorun-rework/wiki/How-To-Bypass-custom-display)
+
 ### Keybind
-**F5** as default key, but you always can update it from `Options > Controls > Autorun Rework > Auto Run Key`
+[Modded Key Info](https://github.com/LeonZ2019/autorun-rework/wiki/Modded-Key-Info)
 
 ### Mod Required
 **Zero** not even CBA

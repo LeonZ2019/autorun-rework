@@ -10,7 +10,7 @@
 		Select 1 (OPTIONAL) - Boolean: TRUE if need stop
 
 	Returns:
-		None
+		STRING: Animation name
 	
 	Example:
 		[player, true] call LEON_Autorun_fnc_getAnimation;
