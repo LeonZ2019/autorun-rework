@@ -14,13 +14,13 @@
 		Select 2 - STRING: New stance
 	
 	Example:
-		call LEON_Autorun_fnc_getAnimation;
+		call LEON_Autorun_fnc_getStance;
 */
 
 private ["_asl", "_isSit", "_currentStance", "_isCrouch", "_isProne", "_stance"];
 
 _currentStance = stance player;
-_isSit = animationState player select [0, 8] == "aadjppne";
+_isSit = animationState player select [1, 7] == "adjppne";
 _currentStance = switch (true) do {
 	case (_isSit): { "Sit" };
 	case (_currentStance == "PRONE"): { "Prone" };

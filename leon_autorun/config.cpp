@@ -28,6 +28,7 @@ class CfgFunctions
 			class stopRunning {};
 			class swimToLand {};
 			class updateStance {};
+			class updateSwimAnim {};
 		};
 	};
 };
@@ -37,7 +38,16 @@ class CfgUserActions
 	{
 		displayName = "Auto Run Key";
 		tooltip = "Activate auto run feature.";
-		onActivate = "call LEON_Autorun_fnc_onKeyDown";
+		onActivate = "[true] call LEON_Autorun_fnc_onKeyDown";
+		onDeactivate = "";
+		onAnalog = "";
+		analogChangeThreshold = 0.1;
+	};
+	class Leon_Autorun_walkKey
+	{
+		displayName = "Auto Walk Key";
+		tooltip = "Activate auto walk feature.";
+		onActivate = "[false] call LEON_Autorun_fnc_onKeyDown";
 		onDeactivate = "";
 		onAnalog = "";
 		analogChangeThreshold = 0.1;
@@ -70,6 +80,9 @@ class CfgDefaultKeysPresets
 			LEON_Autorun_Key[] = {
 				0x3F
 			};
+			Leon_Autorun_walkKey[] = {
+				0x40
+			};
 			LEON_Autorun_disabledKey[] = {
 				0x18, // watch
 				"256 + 0x18", // watch (toggle)
@@ -89,7 +102,7 @@ class UserActionGroups
 	{
 		name = "Autorun Rework";
 		isAddon = 1;
-		group[] = {"Leon_Autorun_Key", "LEON_Autorun_disabledKey", "LEON_Autorun_stopKey"};
+		group[] = {"Leon_Autorun_Key", "Leon_Autorun_walkKey", "LEON_Autorun_disabledKey", "LEON_Autorun_stopKey"};
 	};
 };
 class RscTitles
