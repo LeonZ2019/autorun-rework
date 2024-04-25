@@ -24,9 +24,14 @@ if (alive player && isNull objectParent player && incapacitatedState player == "
 	if (LEON_Autorun_damageAllowed) then {
 		player allowDamage false;
 	};
-	if (LEON_Autorun_isSwim) then {
-		LEON_Autorun_isSwim = false;
-	};
 	LEON_Autorun_animation = [player, true] call LEON_Autorun_fnc_getAnimation;
 	player playMoveNow LEON_Autorun_animation;
+	waitUntil { animationState player != LEON_Autorun_animation};
+	if (LEON_Autorun_damageAllowed) then {
+		player allowDamage true;
+		LEON_Autorun_damageAllowed = false;
+	};
+};
+if (LEON_Autorun_isSwim) then {
+	LEON_Autorun_isSwim = false;
 };

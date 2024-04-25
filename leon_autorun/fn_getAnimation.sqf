@@ -28,7 +28,7 @@ _asl = eyePos _unit select 2;
 _uw = underwater _unit;
 
 _isSA = isSprintAllowed _unit;
-_isFW = (isForcedWalk _unit || LEON_Autorun_walk);
+_isFW = (isForcedWalk _unit || LEON_Autorun_type == 1);
 _terrainAngle = [getPos _unit, getDir _unit] call BIS_fnc_terrainGradAngle;
 _loaded = load _unit;
 _fatigue = getFatigue _unit;
@@ -38,6 +38,9 @@ if (_terrainAngle >= 30) then {
 	if (_terrainAngle >= 17) then {
 		_fatigue = 1;
 	};
+};
+if (LEON_Autorun_type == 2) then {
+	_fatigue = 1;
 };
 _cw = currentWeapon _unit;
 _isRfl = _cw != "" && _cw == primaryWeapon _unit;

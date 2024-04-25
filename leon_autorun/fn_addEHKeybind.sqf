@@ -20,7 +20,7 @@ if (!isNil "LEON_Autorun_stopKeyID") exitWith {};
 if (isNil "LEON_Autorun_active") then { LEON_Autorun_active = false };
 if (isNil "LEON_Autorun_updatingStance") then { LEON_Autorun_updatingStance = false };
 if (isNil "LEON_Autorun_displayAllow") then { LEON_Autorun_displayAllow = [12] };
-if (isNil "LEON_Autorun_walk") then { LEON_Autorun_walk = false };
+if (isNil "LEON_Autorun_type") then { LEON_Autorun_type = 0 };
 
 [] spawn {
 	waitUntil { !isNull (findDisplay 46) };
